@@ -44,7 +44,7 @@ const Boads = () => {
           Create
         </button>
       </form>
-      <h1>Boards</h1>
+      <h1>Boardssss</h1>
       {boadsQuery.data?.map((board) => (
         <div key={board.id}>
           <Link to={href(ROUTES.BOARD, { boardId: board.id })}>
