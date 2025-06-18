@@ -3,11 +3,10 @@ import { useCallback, type RefCallback } from "react";
 
 
 type QueryParams = {
-    page: number;
-    limit: number;
-    isFavorite: boolean;
-    search: string;
-    sort: "name" | "createdAt" | "updatedAt" | "lastOpenedAt";
+    limit?: number;
+    isFavorite?: boolean;
+    search?: string;
+    sort?: "name" | "createdAt" | "updatedAt" | "lastOpenedAt";
 }
 export const useBoardsList = (
     { limit, isFavorite, search, sort }: QueryParams
@@ -16,10 +15,10 @@ export const useBoardsList = (
         params: {
             query: {
                 page: 1,
-                limit,
-                isFavorite,
-                search,
-                sort
+                limit : limit ?? 10,
+                isFavorite : isFavorite ?? false,
+                search : search ?? "",
+                sort:  sort ?? "createdAt"
             }
             
         },
