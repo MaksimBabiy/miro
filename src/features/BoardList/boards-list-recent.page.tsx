@@ -13,6 +13,8 @@ import { type ViewMode, ViewModeToggle } from "./ui/view-mode-toggle";
 
 import { BoardsSidebar } from "./ui/boards-sidebar";
 import { useRecentGroups } from "./model/use-recent-groups";
+import { BoardItem } from "./compose/board-item";
+import { BoardCard } from "./compose/board-card";
 
 function BoardsListPage() {
   const boardsQuery = useBoardsList({

@@ -1,3 +1,4 @@
+import type { ApiSchemas } from "@/shared/api/schema";
 
 
 type BoardsGroup = {

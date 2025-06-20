@@ -1,6 +1,6 @@
 import { ROUTES } from "@/shared/model/routes";
 import { Button } from "@/shared/ui/kit/button";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { LayoutGridIcon, StarIcon, ClockIcon } from "lucide-react";
 import { cn } from "@/shared/lib/css";
 

@@ -1,6 +1,6 @@
 import { ROUTES } from "@/shared/model/routes";
 import { Button } from "@/shared/ui/kit/button";
-import { Link, href } from "react-router-dom";
+import { Link, href } from "react-router";
 import {
   DropdownMenu,
   DropdownMenuContent,

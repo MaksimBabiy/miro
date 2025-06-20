@@ -17,14 +17,12 @@ import { BoardsSortSelect } from "./ui/boards-sort-select";
 import { BoardsSearchInput } from "./ui/boards-search-input";
 
 import { BoardsSidebar } from "./ui/boards-sidebar";
-// import {
-//   TemplatesGallery,
-//   TemplatesModal,
-//   useTemplatesModal,
-// } from "@/features/board-templates";
+
 import { useDebounce } from "@/shared/lib/react";
 import { BoardItem } from "./compose/board-item";
 import { BoardCard } from "./compose/board-card";
+import { TemplatesModal, TemplatesGallery } from "@/features/Board-Template";
+import { useModalStore } from "@/shared/store/modal";
 
 function BoardsListPage() {
   const { search, sort, setSort, setSearch } = useBoardsFilters();
@@ -33,7 +31,7 @@ function BoardsListPage() {
     search: useDebounce(search, 300),
   });
 
-  const templatesModal = useTemplatesModal();
+  const HandleOpenModal = useModalStore((store) => store.open);
 
   const { createBoard, createBoardPending } = useCreateBoard();
 
@@ -51,7 +49,7 @@ function BoardsListPage() {
             description="Здесь вы можете просматривать и управлять своими досками"
             actions={
               <>
-                <Button variant="outline" onClick={() => templatesModal.open()}>
+                <Button variant="outline" onClick={() => HandleOpenModal()}>
                   Выбрать шаблон
                 </Button>
                 <Button disabled={createBoardPending} onClick={createBoard}>

@@ -4,10 +4,11 @@ import { Button } from "@/shared/ui/kit/button";
 
 import { useDeleteBoard } from "../model/use-delete-board";
 import type { ApiSchemas } from "@/shared/api/schema";
+import { useFavouriteBoard } from "../model/use-favourite-board";
 
 export function BoardCard({ board }: { board: ApiSchemas["Board"] }) {
   const deleteBoard = useDeleteBoard();
-  //   const updateFavorite = useUpdateFavorite();
+  const updateFavorite = useFavouriteBoard();
 
   return (
     <BoardsListCard

@@ -23,12 +23,21 @@ export const routes = createBrowserRouter([
         ),
         children: [
           {
-            path: ROUTES.BOARD,
-            lazy: () => import("@/features/Board/board.page"),
-          },
-          {
             path: ROUTES.BOARDS,
             lazy: () => import("@/features/BoardList/boards.page"),
+          },
+          {
+            path: ROUTES.FAVORITE_BOARDS,
+            lazy: () =>
+              import("@/features/BoardList/boards-list-favorite.page"),
+          },
+          {
+            path: ROUTES.RECENT_BOARDS,
+            lazy: () => import("@/features/BoardList/boards-list-recent.page"),
+          },
+          {
+            path: ROUTES.BOARD,
+            lazy: () => import("@/features/Board/board.page"),
           },
         ],
       },
